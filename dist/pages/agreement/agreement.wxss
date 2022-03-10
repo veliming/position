@@ -1,0 +1,23 @@
+.userAgreemrntTit{
+  /* float: right; */
+   margin:50rpx auto; 
+   text-align: center; 
+   font-size: 1.3rem; 
+   font-weight: bold;
+}
+.bitlogo{
+   /* float: right;  */
+    position: absolute; 
+  top: 40rpx;
+  right: 20rpx; 
+  width:170rpx;
+  height: 80rpx;
+}
+.userAgreementContent{
+  margin:0 30rpx;
+}
+.userAgreementContent text{
+  text-indent: 2rem;
+  display: inline-block;
+  font-size: 1rem;
+}

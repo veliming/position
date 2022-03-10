@@ -1,0 +1,25 @@
+<!-- 微信授权 -->
+<view class='userLicenseAgreementBox' wx:if="{{cannotEntery}}">
+  <view class='userLicenseAgreement' style="width: 75%; height: 160px;">
+      <view class='welcome_title'>智慧城市管理系统邀你授权</view>
+      <button wx:if="{{canIUse}}"  style="background:rgb(9,187,7);width:80%;border-radius:5rem;margin-top:2rem;" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信授权</button>
+  </view>
+</view>
+
+
+<!-- 用户许可协议 -->
+<view class="userLicenseAgreementBox" wx:if="{{userLicenseAgreementDisplay}}">
+  <view class="userLicenseAgreement" style="width:240px;height:320px;">
+    <view class="userLicenseAgreementTitle">用户许可协议</view>
+    <view class="userLicenseAgreementExplain">请您认真阅读一下用户许可协议，您必须在使用前同意以下条款才能继续使用。</view>
+    <view class="userLicenseAgreementLink" bindtap="toAgreement">《用户许可协议说明》</view>
+        <view style="text-align:center;"> 
+            <radio-group class="radio-group" style="text-aligin:center;margin:27px 0;" bindchange="radioChange">
+                <radio style="transform:scale(0.9);" class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                    <text>{{item.value}}</text>
+                </radio>
+            </radio-group>
+    </view>
+    <button type="primary" disabled="{{isDisabled}}" bindtap="agreemented" class="userLicenseAgreementBtn">继 续</button>
+  </view>
+</view>

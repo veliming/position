@@ -1,0 +1,32 @@
+
+
+
+<view class="box" wx:if="{{boxDisplay}}">
+
+<!-- 地图显示 -->
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" polyline="{{polyline}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap"  bindregionchange="regionchange" show-location style="width: 100vw; height: 100vh;">
+    <!-- map组件上添加button -->
+      <view class='bottom-btn'>
+        <view bindtap="repair" class="repair">
+          <cover-image  src="../img/repair.png"></cover-image>
+        </view>
+    </view>
+  </map>
+</view>
+
+ <!-- 故障反馈 -->
+<view class="repairFeedbackBox"wx:if="{{repairFeedbackDisplay}}" bindtap="repairFeedbackBox">
+<!-- 故障反馈类型 -->
+  <view class="userLicenseAgreement"  catchtap="checkboxChang" style="padding:0 20px;height:460px;width:70%;">
+    <view class="userLicenseAgreementTitle" >故障反馈类型</view>
+    <checkbox-group bindchange="checkboxChange" data-check="{{index}}">
+      <label class="checkbox" wx:for="{{feedbacks}}" wx:key="{{key}}">
+        <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </checkbox-group>
+      <textarea style="height:100px;margin-top:15px;" placeholder="100字以内" placeholder-style="color:#eee;" maxlength="100" adjust-position="true" bindinput="feedbackErea"/>
+    <button type="primary" bindtap="submitFeedback" style="margin-top:25px;">提 交</button>
+  </view>
+</view>
+
+

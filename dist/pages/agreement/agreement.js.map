@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/agreement/agreement.js"],"names":["Page","data"],"mappings":"6FAAAA,KAAK,CACHC,KAAK,O","file":"pages\\agreement\\agreement.js","sourcesContent":["Page({\r\n  data:{}\r\n})"],"sourceRoot":""}
